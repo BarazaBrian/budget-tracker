@@ -40,3 +40,12 @@ def add_expense(self):
         exp = Expense(date, amount, category, description)
         self.transactions.append(exp)
         print("Expense added successfully!")
+
+def list_transactions(self):
+        print("\n--- All Transactions ---")
+        if len(self.transactions) == 0:
+            print("No transactions added yet.")
+            return
+
+        for t in self.transactions:
+            print(t)
