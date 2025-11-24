@@ -104,3 +104,15 @@ def show_summary(self):
         print("\nCategory Totals:")
         for cat, amount in category_totals.items():
             print(f"{cat}: KSH{amount}")
+
+def get_amount(self):
+        while True:
+            amount = input("Amount: ")
+            try:
+                amount = float(amount)
+                if amount > 0:
+                    return amount
+                else:
+                    print("Enter a positive number.")
+            except:
+                print("Invalid number. Try again.")
