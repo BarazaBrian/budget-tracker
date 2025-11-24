@@ -5,3 +5,12 @@ class Transaction:
         self.category = category.lower().strip()
         self.description = description
         self.type = ttype  # 'income' or 'expense'
+
+class Income(Transaction):
+    def __init__(self, date, amount, category, description):
+        super().__init__(date, amount, category, description, "income")
+
+
+class Expense(Transaction):
+    def __init__(self, date, amount, category, description):
+        super().__init__(date, amount, category, description, "expense")
