@@ -6,6 +6,10 @@ class Transaction:
         self.description = description
         self.type = ttype  # 'income' or 'expense'
 
+    def __str__(self):
+        return f"{self.date} | {self.type.upper()} | {self.category} | KSH{self.amount} | {self.description}"
+
+
 class Income(Transaction):
     def __init__(self, date, amount, category, description):
         super().__init__(date, amount, category, description, "income")
@@ -15,11 +19,12 @@ class Expense(Transaction):
     def __init__(self, date, amount, category, description):
         super().__init__(date, amount, category, description, "expense")
 
+
 class BudgetTracker:
     def __init__(self):
-        self.transactions = []   # list to store income + expenses
+        self.transactions = []
 
-def add_income(self):
+    def add_income(self):
         print("\nAdding income...")
         date = input("Date (YYYY-MM-DD): ")
         amount = self.get_amount()
@@ -30,7 +35,7 @@ def add_income(self):
         self.transactions.append(inc)
         print("Income added successfully!")
 
-def add_expense(self):
+    def add_expense(self):
         print("\nAdding expense...")
         date = input("Date (YYYY-MM-DD): ")
         amount = self.get_amount()
@@ -41,7 +46,7 @@ def add_expense(self):
         self.transactions.append(exp)
         print("Expense added successfully!")
 
-def list_transactions(self):
+    def list_transactions(self):
         print("\n--- All Transactions ---")
         if len(self.transactions) == 0:
             print("No transactions added yet.")
@@ -50,7 +55,7 @@ def list_transactions(self):
         for t in self.transactions:
             print(t)
 
-def filter_transactions(self):
+    def filter_transactions(self):
         print("\nFilter by:")
         print("1) Type (income/expense)")
         print("2) Category")
@@ -78,7 +83,7 @@ def filter_transactions(self):
         else:
             print("Invalid choice!")
 
-def show_summary(self):
+    def show_summary(self):
         print("\n--- Summary ---")
         total_income = 0
         total_expense = 0
@@ -90,7 +95,6 @@ def show_summary(self):
             else:
                 total_expense += t.amount
 
-            # count per category
             if t.category not in category_totals:
                 category_totals[t.category] = 0
             category_totals[t.category] += t.amount
@@ -105,7 +109,7 @@ def show_summary(self):
         for cat, amount in category_totals.items():
             print(f"{cat}: KSH{amount}")
 
-def get_amount(self):
+    def get_amount(self):
         while True:
             amount = input("Amount: ")
             try:
