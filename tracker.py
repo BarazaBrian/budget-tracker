@@ -18,3 +18,14 @@ class Expense(Transaction):
 class BudgetTracker:
     def __init__(self):
         self.transactions = []   # list to store income + expenses
+
+def add_income(self):
+        print("\nAdding income...")
+        date = input("Date (YYYY-MM-DD): ")
+        amount = self.get_amount()
+        category = input("Category: ")
+        description = input("Description: ")
+
+        inc = Income(date, amount, category, description)
+        self.transactions.append(inc)
+        print("Income added successfully!")
