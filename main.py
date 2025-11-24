@@ -39,4 +39,7 @@ def main():
             print("Invalid choice. Try again.")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n\nKeyboard interrupt detected. Exiting safely...")
