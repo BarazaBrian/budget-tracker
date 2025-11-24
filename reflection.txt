@@ -1,0 +1,35 @@
+REFLECTION - Budget Tracker Project
+-----------------------------------
+
+What I Learned
+--------------
+This project helped me understand Object-Oriented Programming concepts in a practical way. 
+I learned how to implement inheritance by creating Income and Expense as subclasses of 
+Transaction, and how to use the super() constructor to initialize inherited attributes. 
+I also gained experience with input validation and error handling, ensuring the program 
+doesn't crash when users enter invalid data. Working with collections (lists) to store 
+and filter transactions improved my understanding of data structures.
+
+
+Challenges I Faced
+------------------
+The main challenge was implementing the filtering system with multiple options. I had to 
+ensure that the filter logic correctly handled different search criteria (type, category, 
+and month). Another challenge was validating user input for amounts - I needed to handle 
+both non-numeric inputs and negative numbers. Initially, I struggled with organizing the 
+code into logical functions, but breaking down the program into smaller methods made it 
+more manageable.
+
+
+How I Intend to Improve It
+---------------------------
+Given more time, I would add:
+1. Date validation to ensure proper format (YYYY-MM-DD)
+2. An "undo last transaction" feature to remove mistakes
+3. Budget threshold warnings when expenses exceed a certain limit
+4. Export summary to a text file for record-keeping
+5. More detailed error messages to guide users
+6. Unit tests to verify that calculations are correct
+
+I would also improve the user interface with better formatting and color-coded output 
+to distinguish between income and expenses more clearly.
