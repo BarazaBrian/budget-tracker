@@ -49,3 +49,31 @@ def list_transactions(self):
 
         for t in self.transactions:
             print(t)
+
+def filter_transactions(self):
+        print("\nFilter by:")
+        print("1) Type (income/expense)")
+        print("2) Category")
+        print("3) Month (YYYY-MM)")
+        choice = input("Choose option: ")
+
+        if choice == "1":
+            ttype = input("Enter type (income/expense): ").strip().lower()
+            for t in self.transactions:
+                if t.type == ttype:
+                    print(t)
+
+        elif choice == "2":
+            category = input("Enter category: ")
+            for t in self.transactions:
+                if t.category.lower() == category.lower():
+                    print(t)
+
+        elif choice == "3":
+            month = input("Enter month (YYYY-MM): ")
+            for t in self.transactions:
+                if t.date.startswith(month):
+                    print(t)
+
+        else:
+            print("Invalid choice!")
