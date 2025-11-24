@@ -77,3 +77,30 @@ def filter_transactions(self):
 
         else:
             print("Invalid choice!")
+
+def show_summary(self):
+        print("\n--- Summary ---")
+        total_income = 0
+        total_expense = 0
+        category_totals = {}
+
+        for t in self.transactions:
+            if t.type == "income":
+                total_income += t.amount
+            else:
+                total_expense += t.amount
+
+            # count per category
+            if t.category not in category_totals:
+                category_totals[t.category] = 0
+            category_totals[t.category] += t.amount
+
+        balance = total_income - total_expense
+
+        print(f"Total Income: KSH{total_income}")
+        print(f"Total Expense: KSH{total_expense}")
+        print(f"Balance: KSH{balance}")
+
+        print("\nCategory Totals:")
+        for cat, amount in category_totals.items():
+            print(f"{cat}: KSH{amount}")
