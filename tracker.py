@@ -14,3 +14,7 @@ class Income(Transaction):
 class Expense(Transaction):
     def __init__(self, date, amount, category, description):
         super().__init__(date, amount, category, description, "expense")
+
+class BudgetTracker:
+    def __init__(self):
+        self.transactions = []   # list to store income + expenses
